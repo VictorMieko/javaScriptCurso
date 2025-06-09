@@ -5,11 +5,14 @@ function escopo() {
     function escolha(evento) {
         evento.preventDefault();
 
-        const opcao1 = form.querySelector('.palavra-um').value.trim();
-        const opcao2 = form.querySelector('.palavra-dois').value.trim();
-
-        const decisao = Math.random() < 0.5 ? opcao1 : opcao2;
-        resultado.innerHTML = `<p>Palavra escolhida: ${decisao}</p>`;
+        const mensagem = form.querySelector('#mensagem').value.trim();
+        
+        if(mensagem.length === 0){
+            resultado.innerHTML = `<p>Insira pelo menos uma opção.</p>`;
+        }else{
+            const decisao = mensagem[Math.floor(Math.random() * mensagem.length)];
+            resultado.innerHTML = `<p>Palavra escolhida: ${decisao}</p>`;
+        }
     }
     form.addEventListener('submit', escolha);
 }
