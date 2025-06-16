@@ -2,7 +2,7 @@ function escopo() {
     const form = document.querySelector('.form');
     const resultado = document.querySelector('.resultado');
 
-    function escolha(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
 
         const mensagem = form.querySelector('.mensagem');
@@ -22,7 +22,6 @@ function escopo() {
             const decisao = mensagem[Math.floor(Math.random() * opcoes.length)];
             resultado.innerHTML = `<p>Palavra escolhida: ${decisao}</p>`;
         }
-    }
-    form.addEventListener('submit', escolha);
+    });
 }
 escopo();
