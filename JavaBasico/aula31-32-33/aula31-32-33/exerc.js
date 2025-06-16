@@ -21,7 +21,6 @@ function meuEscopo() {
     }
     form.addEventListener('submit', recebeEventoForm);//escutador de evento recebendo submit
     */
-
     const pessoas = [];//array
 
     function recebeEventoForm(evento) {
