@@ -1,4 +1,3 @@
-//
 function meuEscopo() {
     //selecionar o formulario
     const form = document.querySelector('.form');//seleciona os elementos por qualquer identificador (name, class, id, etc)
