@@ -4,7 +4,7 @@
  * Retorne true se a imagem estiver no modo paisagem.
  */
 
-const ePaisagem = (largura, altura) => largura > altura;//em funções de retorne de true ou false não é preciso escreve-las, a propria função faz isso
+const ePaisagem = (largura, altura) => largura > altura;//em funções de retorne de true ou false não é preciso escreve-las, a propria função faz isso.
 console.log(ePaisagem(1920, 1080));//true para paisagem
 console.log(ePaisagem(1080, 1920));//false para vertical
 console.log(ePaisagem(1920, 1920));//false para retrato

@@ -9,15 +9,15 @@
  */
 
 console.log('Letra', fizzBuzz('a'));
-for(let i = 0; i <= 100; i++){
+for (let i = 0; i <= 100; i++) {
     console.log(i, fizzBuzz(i));
 }
 
-function fizzBuzz(numero){
-    if(typeof numero !== 'number') return numero;
-    
-    if(numero % 3 === 0 && numero % 5 === 0) return 'FizzBuzz';//condições que checam 2 coisas devem estar no topo para funcionar da forma esperada
-    if(numero % 3 === 0) return 'Fizz';
-    if(numero % 5 === 0) return 'Buzz';
+function fizzBuzz(numero) {
+    if (typeof numero !== 'number') return numero;
+
+    if (numero % 3 === 0 && numero % 5 === 0) return 'FizzBuzz';//condições que checam 2 coisas devem estar no topo para funcionar da forma esperada
+    if (numero % 3 === 0) return 'Fizz';
+    if (numero % 5 === 0) return 'Buzz';
     return numero;
 }
