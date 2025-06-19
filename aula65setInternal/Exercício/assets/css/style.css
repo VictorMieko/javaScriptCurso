@@ -18,6 +18,7 @@ body{
 }
 
 .container{
+    display: flex;
     max-width: 640px;
     margin: 50px auto;
     background-color: #fff;
@@ -32,33 +33,23 @@ body{
     color: rgb(226, 16, 16);
 }
 
-form input, form label, form button{
-    display: block;
-    width: 100%;
-    margin-bottom: 10px;
+.container-2{
+    display: flex;
+    width: 640px;
+    justify-content: center;
 }
-form input{
-    font-size: 24px;
-    height: 50px;
-    padding: 0 20px;
+
+.meu-progresso{
+    width: 50px;
+    height: 265.078px;
+    position:relative;
+    background-color: #ddd;
 }
-form input:focus{
-    outline: 1px solid var(--primary-color);
-}
-form button{
-    border: none;
-    background-color: var(--primary-color);
-    color: #fff;
-    font-size: 18px;
-    font-weight: 700;
-    height: 50px;
-    cursor: pointer;
-    margin-top: 30px;
-}
-form button:hover{
-    background-color: var(--prmary-color-darker);
-}
-form button:active{
-    color: #000;
-    background-color: rgba(61, 135, 204, 0.993);
+
+.minha-barra{
+    bottom: 0;/*pra barra ir de baixo pra cima*/
+    background-color: #52e08d;
+    width: 50px;
+    height: 10px;
+    position: absolute;
 }
