@@ -2,12 +2,13 @@ const relogio = document.querySelector('.relogio');
 const iniciar = document.querySelector('.iniciar');
 const pausar = document.querySelector('.pausar');
 const zerar = document.querySelector('.zerar');
+const barra = document.querySelector('.minha-barra');
 
 let segundos = 0;
 let timer;
 let h2;
 let corIntervalo;
-let crementarBarra;
+let moverBarra;
 
 function criarSegundos(segundos) {
     const data = new Date(segundos * 1000);
@@ -26,6 +27,7 @@ function criaH2() {
     return h2;
 }
 
+/*
 function moverBarra(){
     const barra = document.querySelector('.minha-barra');
 
@@ -40,6 +42,7 @@ function moverBarra(){
     }, 10)
 }
 
+*/
 iniciar.addEventListener('click', function () {
 
     if (h2) {//se tiver faça (se não tiver ele só começa a contar depois de remover o h2)
@@ -52,8 +55,11 @@ iniciar.addEventListener('click', function () {
         segundos++;
         relogio.innerHTML = criarSegundos(segundos);
         relogio.classList.remove('pausado');
+
+        moverBarra = (segundos % 60) * (100/60);
+        barra.style.height = moverBarra + '%';
+
     }, 1000)
-    moverBarra();
 
     //Para a mudança de cor continuar tem que mudar a função mas eu to com preguiça
 });
@@ -64,7 +70,6 @@ pausar.addEventListener('click', function () {
 
     clearInterval(timer);
     clearInterval(corIntervalo);
-    clearInterval(crementarBarra);
     relogio.classList.add('pausado');
 
     //if(!h2Pausado){
@@ -84,6 +89,9 @@ zerar.addEventListener('click', function () {
     relogio.innerHTML = `00:00:00`;
     relogio.classList.remove('pausado');
     segundos = 0;
+
+    moverBarra = 0;
+    barra.style.height = 0 + '%'
 });
 
 document.addEventListener('DOMContentLoaded', function () {

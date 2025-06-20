@@ -50,6 +50,6 @@ body{
     bottom: 0;/*pra barra ir de baixo pra cima*/
     background-color: #52e08d;
     width: 50px;
-    height: 10px;
+    height: 0px;
     position: absolute;
 }
