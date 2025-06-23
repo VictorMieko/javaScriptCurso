@@ -40,9 +40,7 @@ function setResult(msg, isValid) {
 
     const p = criaP();
 
-    if (isValid) {
-        p.classList.add('available-true');
-    } else {
+    if (!isValid) {
         p.classList.add('available-false');
     }
     p.innerHTML = msg;
