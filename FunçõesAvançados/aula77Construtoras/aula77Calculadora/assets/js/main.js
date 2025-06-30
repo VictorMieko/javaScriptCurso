@@ -12,34 +12,21 @@ function Calculadora() {
         document.addEventListener('click', (e) => {
             const el = e.target;
 
-            if (el.classList.contains('btn-num')) {
-                this.btnParaDisplay(el.innerText);
-            }
-            if (el.classList.contains('btn-clear')) {
-                this.clearDisplay();
-            }
-            if (el.classList.contains('btn-del')) {
-                this.deleteUm();
-            }
-            if (el.classList.contains('btn-eq')) {
-                this.realizaConta();
-            }
+            if (el.classList.contains('btn-num')) this.btnParaDisplay(el.innerText);
+            if (el.classList.contains('btn-clear')) this.clearDisplay();
+            if (el.classList.contains('btn-del')) this.deleteUm();            
+            if (el.classList.contains('btn-eq')) this.realizaConta();
+
             this.display.focus();
         });
     };
 
-    this.btnParaDisplay = (valor) => {
-        this.display.value += valor;
-    };
+    this.btnParaDisplay = (valor) => this.display.value += valor;
 
-    this.clearDisplay = () => {
-        this.display.value = '';
-    };
+    this.clearDisplay = () => this.display.value = '';
 
-    this.deleteUm = () => {
-        this.display.value = this.display.value.slice(0, -1);
-    };
-
+    this.deleteUm = () => this.display.value = this.display.value.slice(0, -1);
+    
     this.realizaConta = () => {
         let conta = this.display.value;
 
