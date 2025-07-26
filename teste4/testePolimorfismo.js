@@ -16,7 +16,7 @@ function Nave(tipo, disparos, velocidade) {
 }
 Nave.prototype.mach = function (){
     if(this.velocidade < 1235) return console.log(`Abaixo da velocidade do som`);
-    if(this.velocidade >= 1235) return console.log(`Acima ou igual a velocidade do som`);
+    if(this.velocidade >= 1235) return console.log(`Acima ou igual a velocidade do som: ${this.velocidade}`);
 };
 Nave.prototype.disparar = function() {
         if(this.disparos > 0) this.disparos--;
@@ -27,3 +27,18 @@ nave.mach();
 nave.disparar();
 nave.disparar();
 console.log(nave);
+
+function Aviao(tipo, disparos, velocidade, passageiros) {
+    Nave.call(this, tipo, disparos, velocidade);
+    this.velocidade = disparos;
+    this.passageiros = passageiros;
+}
+Aviao.prototype = Object.create(Nave.prototype);
+Aviao.prototype.constructor = Aviao;
+
+Aviao.prototype.quilometros = function (){
+    return console.log(`Velocidade do avião é: Km/h ${this.velocidade}`);
+};
+const aviao = new Aviao('humano', 6343, 5);
+console.log(aviao);
+aviao.quilometros();
