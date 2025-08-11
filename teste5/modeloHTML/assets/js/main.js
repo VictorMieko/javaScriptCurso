@@ -1,6 +1,7 @@
-class Livros {
+class validaLivros {
     constructor() {
         this.formulario = document.querySelector('.formulario');
+        this.livraria = this.carregarLivros();
         this.eventos();
     }
 
@@ -16,10 +17,13 @@ class Livros {
         const validCampos = this.checkCampos();
 
         if(validCampos) {
+            const livro = this.criaLivro(); // instância
+            this.livraria.push = livro; // coloca no array
+            this.salvarLivro(this.livraria);
             alert('Foi');
             this.formulario.submit();
+            this.formulario.reset(); // Reseta os input
         }
-
     }
 
     checkCampos() {
@@ -43,7 +47,6 @@ class Livros {
 
         return valid;
     }
-
     validaAno(campos) {
         const ano = campos.value;
         let valid = true;
@@ -54,12 +57,36 @@ class Livros {
         }
         return true;
     }
-
     createError(campos, msg) {
         const div = document.createElement('div');
         div.innerHTML = msg;
         div.classList.add('error-text');
         campos.insertAdjacentElement('Afterend', div);
     }
+
+    // Função que utiliza uma classe exterior para criar retornar livro
+    criaLivro() {
+        const titulo = this.formulario.querySelector('.titulo');
+        const autor = this.formulario.querySelector('.autor');
+        const genero = this.formulario.querySelector('.genero');
+        const ano = this.formulario.querySelector('.ano-publicacao');
+
+        return new Livro(titulo, autor, genero, ano);
+    }
+    salvarLivro() {
+        localStorage.setItem('livros', JSON.stringify(this.livraria));
+    }
+    carregarLivros() {
+        return JSON.parse(localStorage.getItem('livros')) || [];
+    }
 }
-const livraria = new Livros();
+const livraria = new validaLivros();
+
+class Livro {
+    constructor(titulo, autor, genero, ano) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.genero = genero;
+        this.ano = ano;
+    }
+}
