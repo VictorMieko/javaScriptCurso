@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MODELO</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+    <section class="container">
+        <h1>FICHA</h1>
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet similique veniam omnis ut
+            suscipit ratione incidunt itaque assumenda? Quod rerum magnam facere totam at ducimus,
+            placeat error similique quae vero?
+        </p>
+
+        <form action="">
+            <label for="nome-do-personagem">Nome do Personagem</label>
+            <input type="text" id="nome-do-personagem" placeholder="Digite um nome">
+
+            <label for="raca-do-personagem">Raça</label>
+            <input type="text" id="raca-do-personagem" placeholder="Escolha a raça">
+
+            <div class="container-classe">
+                <div class="opcoes-classe">
+                    <h3>Escolha sua Classe</h3>
+                    <label>
+                        <input type="radio" name="escolher-classe" value="mago" checked><a href="mago.html">MAGO</a>
+                    </label>
+                    <label>
+                        <input type="radio" name="escolher-classe" value="guerreiro"><a href="guerreiro.html">GUERREIRO</a>
+                    </label>
+                </div>
+                <div class="mostrar-classe"></div>
+            </div>
+            <button id="comecar-jogo-btn">Começar</button>
+        </form>
+    </section>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
