@@ -1,0 +1,1 @@
+{"version":3,"file":"bundle.js","mappings":";;;;AAAA;;AAIAA,OAAO,CAACC,GAAG,CAAC,SAAS,CAAC,C","sources":["webpack://aula116webpack/./src/index.js"],"sourcesContent":["// arquivo original\r\n\r\n\r\n\r\nconsole.log('linha 5');\r\n"],"names":["console","log"],"sourceRoot":""}
