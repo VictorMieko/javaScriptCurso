@@ -1,5 +1,3 @@
-import GeraCPF from "./GeraCPF";
-
 export default class ValidaCPF {
     constructor(cpfEnviado) {
         Object.defineProperty(this, 'cpfLimpo', {
