@@ -1,0 +1,1 @@
+import './assets/css/style.css'; // carregar o css
